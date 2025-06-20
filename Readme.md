@@ -13,14 +13,13 @@ This repository contains the implementation of various deep learning approaches 
 **Date:** June 20, 2025
 
 <!-- Replace with slide 3 showing examples of spatial relations -->
-![Spatial Relations Examples](./images/spatial_relations_examples.png)
+![Spatial Relations Examples](./results/0.png)
 
 ## Problem Statement
 
 Spatial relations are complex to model as they depend on position, scale, perspective, and semantic context. Traditional approaches rely solely on raw images without explicitly exploiting geometric or relational information between objects.
 
-<!-- Replace with slide 4 showing the problem examples with correct/incorrect predictions -->
-![Problem Examples](./images/problem_examples.png)
+![Problem Examples](././results/1.png)
 
 ## Dataset: SpatialSense++
 
@@ -45,8 +44,7 @@ The SpatialSense++ dataset is used for training and evaluation with the followin
 - to the left of
 - to the right of
 
-<!-- Replace with slide 6 showing the pie chart of spatial relations distribution -->
-![Dataset Distribution](./images/dataset_distribution.png)
+![Dataset Distribution](./results/2.png)
 
 ## Methods
 
@@ -56,8 +54,7 @@ The SpatialSense++ dataset is used for training and evaluation with the followin
 - **Features:** 4096 dimensions
 - **Classifier:** MLP (4096 → 512 → 256 → 9)
 
-<!-- Replace with slide 7 showing Method 1 architecture diagram -->
-![Method 1 Architecture](./images/method1_architecture.png)
+![Method 1 Architecture](./results/3.png)
 
 ### Method 2: Vision Transformer
 - **Input:** Complete image 224×224  
@@ -66,8 +63,7 @@ The SpatialSense++ dataset is used for training and evaluation with the followin
 - **Features:** 768 dimensions
 - **Classifier:** MLP (768 → 512 → 256 → 9)
 
-<!-- Replace with slide 8 showing Method 2 architecture diagram -->
-![Method 2 Architecture](./images/method2_architecture.png)
+![Method 2 Architecture](./results/4.png)
 
 ### Method 3: Dual Architecture (Complete Image + Masking)
 - **Input 1:** Complete image (RGB)
@@ -75,8 +71,7 @@ The SpatialSense++ dataset is used for training and evaluation with the followin
 - **Fusion:** Concatenation of VGG features (4096 + 4096 = 8192)
 - **Classifier:** MLP (8192 → 512 → 256 → 9)
 
-<!-- Replace with slide 9 showing Method 3 architecture diagram -->
-![Method 3 Architecture](./images/method3_architecture.png)
+![Method 3 Architecture](./results/5.png)
 
 ### Method 4: Dual Architecture (Complete Image + Binary Masking)
 - **Input 1:** Complete image (RGB)
@@ -84,8 +79,7 @@ The SpatialSense++ dataset is used for training and evaluation with the followin
 - **Fusion:** Concatenation of VGG features (4096 + 4096 = 8192)
 - **Classifier:** MLP (8192 → 512 → 256 → 9)
 
-<!-- Replace with slide 10 showing Method 4 architecture diagram -->
-![Method 4 Architecture](./images/method4_architecture.png)
+![Method 4 Architecture](./results/6.png)
 
 ### Method 5: Dual Architecture (Image + Geometric Features)
 - **Modality 1:** Complete image → Pre-trained VGG16 (4096 features)
@@ -94,7 +88,7 @@ The SpatialSense++ dataset is used for training and evaluation with the followin
 - **Classifier:** MLP (4608 → 512 → 256 → 9)
 
 <!-- Replace with slide 11 showing Method 5 architecture diagram -->
-![Method 5 Architecture](./images/method5_architecture.png)
+![Method 5 Architecture](./results/7.png)
 
 ### Method 6: Multimodal Architecture (Image + Geometric Features + BERT Text)
 - **Modality 1:** Complete image → Pre-trained VGG16 (4096 features)
@@ -104,7 +98,7 @@ The SpatialSense++ dataset is used for training and evaluation with the followin
 - **Classifier:** MLP (5376 → 512 → 256 → 9)
 
 <!-- Replace with slide 12 showing Method 6 architecture diagram -->
-![Method 6 Architecture](./images/method6_architecture.png)
+![Method 6 Architecture](./results/8.png)
 
 ## Results
 
@@ -119,8 +113,6 @@ The SpatialSense++ dataset is used for training and evaluation with the followin
 | Method 5: Image + Geometric Features | 42.35% | 40.33% |
 | Method 6: Image + Geometric + BERT Text | **45.5%** | **43.3%** |
 
-<!-- Replace with slide 14 showing the results table -->
-![Results Table](./images/results_table.png)
 
 ### Training Details
 - **Cross-validation:** 5-folds
@@ -129,20 +121,17 @@ The SpatialSense++ dataset is used for training and evaluation with the followin
 - **Batch size:** 8
 
 ### Method 1 Results
-<!-- Replace with slide 13 showing Method 1 loss curves and confusion matrix -->
-![Method 1 Results](./images/method1_results.png)
-
+![Method 1 Results](./results/9.png)
+![Method 4 Results](./results/10.png)
 ### Method 4 Results  
-<!-- Replace with slide 15 showing Method 4 confusion matrix and examples -->
-![Method 4 Results](./images/method4_results.png)
+![Method 4 Results](./results/11.png)
 
 ### Method 5 Results
 <!-- Replace with slide 16 showing Method 5 confusion matrix -->
-![Method 5 Results](./images/method5_results.png)
+![Method 5 Results](./results/12.png)
 
 ### Method 6 Results
-<!-- Replace with slide 17 showing Method 6 confusion matrix and loss curves -->
-![Method 6 Results](./images/method6_results.png)
+![Method 6 Results](./results/13.png)
 
 ### Common Errors Analysis
 
@@ -155,8 +144,6 @@ The top 5 most frequent prediction errors across all methods:
 
 These errors highlight persistent confusions between semantically similar spatial relations.
 
-## Acknowledgments
-
-- Université Paris Cité for providing computational resources
+---
+- Université Paris Cité 
 - SpatialSense++ dataset creators for the annotated spatial relations data
-- The computer vision community for the foundational methods and architectures
